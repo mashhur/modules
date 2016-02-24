@@ -1,8 +1,5 @@
-#!/usr/bin/python
-
-# Copyright (C) 2007 by Jaroslaw Zachwieja
-# Published under the terms of GNU General Public License v2 or later.
-# License text available at http://www.gnu.org/licenses/licenses.html#GPL
+# Copyright 2015 by Mashhur Sattorov
+# MIT License
 
 import serial
 import string
