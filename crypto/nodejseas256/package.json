@@ -1,0 +1,13 @@
+{
+  "name": "tmon_search",
+  "description": "A package using search on TMON service versioning",
+  "author": "Mashhur <mashhur@tmon.co.kr>",
+  "version": "0.0.1",
+  "dependencies": {
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest",
+	"iconv-lite" : "latest"
+  },
+  "engine": "node 0.4.1"
+}
