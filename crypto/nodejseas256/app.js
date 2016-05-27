@@ -20,7 +20,7 @@ AESCrypt.encrypt = function(cryptkey, iv, cleardata) {
 }
 
 var cryptkey   = crypto.createHash('sha256').update('Nixnogen').digest(),
-    iv         = 'Aa61UX12zYR4z8SX',	// key
+    iv         = 'mykey',	// key
     buf        = "mashhur", // 32 chars, text
     enc        = AESCrypt.encrypt(cryptkey, iv, buf);
 var dec        = AESCrypt.decrypt(cryptkey, iv, enc);
