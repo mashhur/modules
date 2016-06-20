@@ -52,3 +52,36 @@ console.warn("cipherText: " + cipherText);
 
 var plaintext = desEcb.decrypt(new Buffer(cipherText, 'base64'));
 console.log(plaintext.toString());
+
+
+
+// method 3, used standard crypto
+var key   			= 'Your_secret_key_';
+var text        	= "마쉬후르";
+var tmon_encrypt_data 	= "QTBk/ehA7ldxEJKXa14hVQ=="; // for the test
+
+var crypto = require('crypto'),
+    algorithm = 'aes-128-ecb',
+    password = key;
+
+function encrypt(buffer){
+  var cipher = crypto.createCipheriv(algorithm, password, '')
+  var crypted = Buffer.concat([cipher.update(buffer), cipher.final()]);
+  return crypted;
+}
+ 
+function decrypt(buffer){
+  var decipher = crypto.createDecipheriv(algorithm, password, '')
+  var dec = Buffer.concat([decipher.update(buffer), decipher.final()]);
+  return dec;
+}
+
+// use for encrypt
+var hw = encrypt(new Buffer(text, "utf8"));
+
+//console.log("TMON encrypt data:    " + tmon_encrypt_data);
+//console.log("Current encrypt data: " + hw.toString('base64'));
+//console.log("Current decrypt data: " + decrypt(hw).toString('utf8'));
+
+// use for decrypt
+console.log("Current decrypt data: " + decrypt(new Buffer(tmon_encrypt_data, 'base64')).toString('utf8'));
